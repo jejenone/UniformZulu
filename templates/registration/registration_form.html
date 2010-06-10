@@ -1,0 +1,12 @@
+{% extends "uniformzulu/base_index.html" %}
+
+{% block qcm %}
+
+<form method="post" action="{% url registration_register %}">
+<table>
+{{form.as_table}}
+</table>
+<input type=submit value="S'enregistrer">
+</form>
+
+{% endblock %}

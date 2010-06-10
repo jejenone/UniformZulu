@@ -1,0 +1,57 @@
+desc %{Creates a build directory with compressed versions of the code}
+task :build do
+  require 'pathname'
+
+  chdir(File.dirname(__FILE__)) do
+    compressor = File.join('libraries', 'yuicompressor', 'yuicompressor-2.4.2.jar')
+    build_dir = Pathname.new('../build').expand_path
+
+    build_dir.mkpath unless build_dir.exist?
+
+    # compile source files to build directory
+    Pathname.glob('**/*').each do |path|
+      next unless path.file?
+
+      # exclude Rakefile, PSD's, mediaplayer, and yuicompressor
+      next if path.to_s =~ /(yuicompressor|mediaplayer|(rakefile|\.psd)$)/i
+
+      build_file = Pathname.new build_dir.to_s + '/' + path.to_s
+
+      unless build_file.exist?
+        dir = build_file.dirname
+        dir.mkpath unless dir.exist?
+      else
+        next unless build_file.mtime < path.mtime
+      end
+
+      if path.to_s =~ /\.(css|js)$/
+        puts "compress #{path} -> #{build_file}"
+        java = `java -jar #{compressor} #{path.to_s} -o #{build_file.to_s}`
+      else
+        cp path.to_s, build_file.to_s
+      end
+    end
+  end
+
+  Rake::Task[:prune].invoke
+
+  puts "Done!"
+end
+
+desc %{Prunes the build directory of any files that were removed from source since the last build}
+task :prune do
+  chdir(File.dirname(__FILE__)) do
+    src_files = Dir['**/*']
+    bld_dir = File.expand_path('../build')
+
+    Dir[bld_dir + '/**/*'].each do |path|
+      unless src_files.include?(path[(bld_dir.size + 1)..path.size])
+        if File.directory?(path)
+          sh %<rm -rf #{path}>
+        else
+          sh %<rm #{path}>
+        end
+      end
+    end
+  end
+end

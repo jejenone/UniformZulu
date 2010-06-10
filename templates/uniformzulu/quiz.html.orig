@@ -1,0 +1,48 @@
+{% extends "uniformzulu/qcm_ppl.html" %}
+
+{% block title %}QCM examen PPL - Module {{quiz.module}} {% endblock %}
+
+{% block qcm %}
+
+
+QCM cr&eacute;&eacute; le {{quiz.created|date:"l d M Y" }} &agrave; {{quiz.created|date:"H:i:s"}} - <a href="{% url uniformzulu.views.get_quiz quiz.module.id %}?new=1">G&eacute;n&eacute;rer un nouveau QCM</a>
+<form action="" method="post">
+
+<!-- google_ad_section_start -->
+
+    {{ formset.management_form }}
+	
+        {% for form in formset.forms %}
+
+
+<div  align=center class="rounded_question">
+<table width='80%' align=center border='0' cellspacing='0' cellpadding='5'>
+        <tr><td width=3% class="rounded_question_num">{{forloop.counter}}</td><td class=rounded_question_texte>{{ form.problem|safe }}</td></tr>
+        {% if form.options %}<tr><td colspan=2 class=rounded_question_options>{{ form.options|safe }}</td></tr>{% endif %}
+        <tr><td colspan=2 class=qcm_choix2>
+            {{ form.answers }}
+		</td></tr>
+</table>
+</div>
+
+<!--
+<div class="rounded_question">
+	<div class="tl"></div><div class="tr"></div>
+        <h2>{{forloop.counter}}-{{ form.problem|safe }}</h2>
+
+            <p>{{ form.options|safe }}</p>
+            <p>{{ form.answers }}</p>
+	<div class="bl"></div><div class="br"></div>
+</div>
+-->
+
+        {% endfor %}
+    <div align=center> 
+    <input type="submit" value="Correction">
+    </div>
+
+<!-- google_ad_section_end -->
+
+</form>
+
+{% endblock %}

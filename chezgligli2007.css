@@ -1,0 +1,301 @@
+/* CSS Document */
+body {
+	background-attachment: fixed;
+	left: 0px;
+	top: 0px;
+	margin: 0px;
+	background-color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.texte {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #003333;
+	text-align: justify;
+	vertical-align: top;
+}
+
+td.accueil_texte {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #003333;
+	vertical-align: top;
+	background-color: #FFF8F0;
+}
+
+td.accueil_texte2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #003333;
+	vertical-align: middle;
+	background-color: #F5D3AA;
+}
+
+td.login_texte {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #666666;
+	text-align: center;
+	vertical-align: middle;
+}
+
+a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #333333;
+	text-decoration: none;
+}
+
+a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #333333;
+	text-decoration: none;
+}
+
+a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #000099;
+	text-decoration: none;
+}
+
+a.baseline:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #F5D3AA;
+	text-decoration: none;
+}
+
+a.baseline:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #F5D3AA;
+	text-decoration: none;
+}
+
+a.baseline:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #000099;
+	text-decoration: underline;
+}
+
+a.liens:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #4F91AC;
+	text-decoration: none;
+}
+
+a.liens:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #4F91AC;
+	text-decoration: none;
+}
+
+a.liens:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #346274;
+	text-decoration: underline;
+}
+
+a.qcm:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #FEFEFE;
+	text-decoration: underline;
+}
+
+a.qcm:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+a.qcm:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a.contact{
+	color: #0000FF;
+	text-decoration: underline;
+}
+
+.soustitre {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: large;
+	font-style: italic;
+	font-weight: bold;
+	color: #666666;
+}
+
+.item_menu {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+	text-align: center;
+	vertical-align: middle;
+	color: #333333;
+}
+
+.item_mentions {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	text-align: center;
+	vertical-align: middle;
+	color: #333333;
+}
+.baseline {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #F5D3AA;
+	background-color: #4f91ac;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+}
+
+td.qcm_choix{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #F5D3AA;
+	background-color: #4F91AC;
+	text-align: center;
+	vertical-align: middle;
+	font-size: small;
+}
+
+td.qcm_choix_2{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4F91AC;
+	background-color: #FFFFFF;
+	text-align: center;
+	vertical-align: top;
+	font-size: small;
+}
+
+input.qcm_bouton {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #FFFFFF;
+	background-color: #4F91AC;
+	vertical-align: middle;
+	width: 110px;
+}
+
+input.qcm_bouton_vert {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #FFFFFF;
+	background-color: #090;
+	vertical-align: middle;
+	width: 110px;
+}
+
+input.qcm_bouton_rouge {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #FFFFFF;
+	background-color: #C00;
+	vertical-align: middle;
+	width: 110px;
+}
+
+input.qcm_texte {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: #4F91AC;
+	background-color: #FFFFFF;
+	vertical-align: middle;
+}
+
+td.qcm_examen_no {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #FFFFFF;
+	background-color: #333333;
+	text-align: left;
+	vertical-align: top;
+}
+
+td.qcm_examen_question {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #FFFFFF;
+	background-color: #4F91AC;
+	text-align: justify;
+	vertical-align: top;
+	font-weight: bold;
+}
+
+td.qcm_examen_lettres {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #333333;
+	background-color: #FFFFFF;
+	text-align: right;
+	vertical-align: top;
+}
+
+td.qcm_examen_reponses {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #333333;
+	background-color: #FFE7C8;
+	text-align: justify;
+	vertical-align: top;
+}
+
+td.qcm_examen_reponses_bonne {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #333333;
+	background-color: #B6FFB1;
+	text-align: justify;
+	vertical-align: top;
+	font-weight: bold;
+}
+
+td.qcm_examen_reponses_fausse {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #333333;
+	background-color: #FF9E99;
+	text-align: justify;
+	vertical-align: top;
+	font-weight: bold;
+}
+
+td.qcm_examen_correction {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #333333;
+	background-color: #ECECEC;
+	text-align: justify;
+	vertical-align: top;
+}
+
+td.qcm_examen_options {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #333333;
+	background-color: #64BEE3;
+	text-align: justify;
+	vertical-align: top;
+}
+.notam {
+	color: #2E5B72;
+}
+
+object.accueil_texte {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #003333;
+	vertical-align: middle;
+	background-color: #FFF8F0;
+}

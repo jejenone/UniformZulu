@@ -1,0 +1,272 @@
+/* CSS Document */
+body {
+	background-attachment: fixed;
+	left: 0px;
+	top: 0px;
+	margin: 0px;
+	background-color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.texte {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #003333;
+	text-align: left;
+	vertical-align: top;
+}
+
+
+
+.flat_stats
+{
+    border-width: 1px;
+    background-color: #E5E5E5;          /* if needed */
+    margin: 12px;
+	float: left;
+}
+
+.module_stats
+{
+    border-left-style: none;
+    border-bottom-style: solid;
+    border-right-style: none;
+    border-top-style: solid;
+    border-width: 1px;
+    background-color: #E5E5E5;          /* if needed */
+    display: block;
+    max-width: 100%;
+    margin: 5px;
+}
+
+div.spacer {
+  clear: both;
+  }
+div.module_stats_header {
+/*    border-bottom-style: solid;*/
+	margin: 0px;
+	padding: 10px;
+	clear: both;
+  background-color: #8a97ad;
+}
+
+.text_stats
+{
+    border-width: 1px;
+    background-color: #E5E5E5;          /* if needed */
+	white-space: nowrap;
+    margin: 12px;
+    line-height: 0.3em;
+   	font-size: 0.9em; 
+	float: left;
+}
+
+.text_stats_pct
+{
+	text-align: right;
+}
+
+.rounded_index table
+{
+    background-color: #E5E5E5;          /* if needed */
+    -webkit-border-radius: 8px;    /* for Safari */
+    -webkit-box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    -moz-border-radius: 8px;       /* for Firefox */
+    border: 1px;
+    margin: 12px;
+}
+.rounded_index_header
+{
+    background-color: #8a97ad;          /* if needed */
+    color: #FFFFFF;          /* if needed */
+    font-weight: bold;
+    font-size: 0.9em;
+    line-height: 1em;
+    -webkit-border-top-left-radius: 8px;    /* for Safari */
+    -webkit-border-top-right-radius: 8px;    /* for Safari */
+    -moz-border-radius-topleft: 8px;       /* for Firefox */
+    -moz-border-radius-topright: 8px;       /* for Firefox */
+    text-shadow: rgba(0,0,0,.4) 0px 2px 5px; /* Safari-only, but cool */
+}
+
+
+.rounded_question
+{
+    background-color: #E5E5E5;          /* if needed */
+    -webkit-border-radius: 8px;    /* for Safari */
+    -webkit-box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    -moz-border-radius: 8px;       /* for Firefox */
+    border: 1px;
+    margin: 12px;
+    display: block;
+}
+
+.rounded_reponse_fausse table
+{
+    background-color: #D27D7F;          /* if needed */
+    -webkit-border-radius: 8px;    /* for Safari */
+    -webkit-box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    -moz-border-radius: 8px;       /* for Firefox */
+    border: 1px;
+    margin: 12px;
+    text-align:left;
+}
+.rounded_reponse_bonne table
+{
+    background-color: #80C06E;          /* if needed */
+    -webkit-border-radius: 8px;    /* for Safari */
+    -webkit-box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    -moz-border-radius: 8px;       /* for Firefox */
+    border: 1px;
+    margin: 12px;
+    text-align:left;
+}
+
+.question_header
+{
+	background-color: #8a97ad;
+    -webkit-border-top-left-radius: 8px;    /* for Safari */
+    -moz-border-radius-topleft: 8px;    /* for Safari */
+    -webkit-border-top-right-radius: 8px;    /* for Safari */
+    -moz-border-radius-topright: 8px;    /* for Safari */
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.question_num
+{
+    background-color: #a8b8d7;          /* if needed */
+    color: #FFFFFF;
+    horizontal-align: center;
+    text-align: center;
+    -webkit-border-top-left-radius: 8px;    /* for Safari */
+    -moz-border-radius-topleft: 8px;    /* for Safari */
+    width: 5%;
+	float:left;
+	margin-bottom: -200px; padding-bottom: 200px;
+	
+}
+.question_texte
+{
+    background-color: #8a97ad;          /* if needed */
+    color: #FFFFFF;          /* if needed */
+    font-weight: bold;
+    font-size: 0.9em;
+    text-align: left;
+    -webkit-border-top-right-radius: 8px;    /* for Safari */
+    -moz-border-radius-topright: 8px;       /* for Firefox */
+    text-shadow: rgba(0,0,0,.4) 0px 2px 5px; /* Safari-only, but cool */
+	padding-left: 5px;
+/*
+	position: absolute;
+*/
+	top: 0;
+	right: 0;
+	margin: 0;
+	width: 94%;
+	float: left;
+	margin-bottom: -200px; padding-bottom: 200px;
+}
+
+
+.question_options
+{
+    background-color: #9DADC6;          /* if needed */
+    color: #FFFFFF;          /* if needed */
+    line-height: 1em;
+    font-size: 0.8em;
+    text-align: left;
+    text-shadow: rgba(0,0,0,.4) 0px 2px 5px; /* Safari-only, but cool */
+    clear: both;
+    padding: 5px;
+    
+}
+
+.qcm_choix, .reponse_bonne, .reponse_fausse, .correction
+{
+    color: #000000;          /* if needed */
+/*     font-weight: bold; */
+    font-size: 1em;
+    line-height: 1em;
+    text-align: left;
+    clear: both;
+    padding: 5px;
+    -webkit-border-bottom-left-radius: 8px;    /* for Safari */
+    -moz-border-radius-bottomleft: 8px;    /* for Safari */
+    -webkit-border-bottom-right-radius: 8px;    /* for Safari */
+    -moz-border-radius-bottomright: 8px;    /* for Safari */
+}
+.qcm_choix { background-color: #E5E5E5; }
+.reponse_bonne { background-color: #80C06E; }
+.reponse_fausse { background-color: #D27D7F; }
+.correction { padding: 0; margin: 10px;}
+
+.baseline {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	color: white;
+	background-color: #a8b8d7;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+}
+
+
+/* */
+
+#container {
+    position: relative;
+    width: 100%;
+    min-width: 760px;
+    padding: 0;
+}
+
+#contentwrapper{
+float: left;
+width: 100%;
+}
+#content {
+/*     margin: 10px 15px; */
+    margin-right: 270px;
+}
+
+.innertube{
+margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
+margin-top: 0;
+}
+
+#ads {
+float: left;
+width: 270px; /*Width of right column in pixels*/
+margin-left: -270px; /*Set left margin to -(RightColumnWidth) */
+}
+
+#header {
+    width: 100%;
+}
+#header {
+    background: #000000;
+    color: #ffc;
+    overflow: hidden;
+}
+#header a:link, #header a:visited {
+    color: white;
+}
+
+#header a:hover {
+    text-decoration: underline;
+}
+
+
+/* jeje 30/03/10 */
+#content-main { float:left; width:70%; background:white; color:black; padding-bottom:10px; }
+#generic #content-main, #code #content-main { width:100%; }
+#content-main * { margin-left:22px; margin-right:24px; }
+#content-main * * { margin-left:0; margin-right:0; }
+
+pre {
+white-space: pre-wrap; /* css-3 */
+white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+white-space: -pre-wrap; /* Opera 4-6 */
+white-space: -o-pre-wrap; /* Opera 7 */
+word-wrap: break-word; /* Internet Explorer 5.5+ */
+}

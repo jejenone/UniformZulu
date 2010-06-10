@@ -1,0 +1,37 @@
+{% extends "uniformzulu/base_qcm.html" %}
+
+{% block title %}QCM examen PPL - Module {{quiz.module}} {% endblock %}
+
+{% block qcm %}
+
+
+QCM cr&eacute;&eacute; le {{quiz.created|date:"l d M Y" }} &agrave; {{quiz.created|date:"H:i:s"}} - <a href="{% url uniformzulu.views.get_quiz quiz.module.id %}?new=1">G&eacute;n&eacute;rer un nouveau QCM</a>
+<form action="" method="post">
+
+<!-- google_ad_section_start -->
+
+    {{ formset.management_form }}
+	
+        {% for form in formset.forms %}
+
+<div class="rounded_question">
+	<div class="question_header">
+        <div class="question_num"><p>{{forloop.counter}}</p></div>
+        <div class="question_texte"><p>{{ form.problem|safe }}</p></div>
+    </div>
+    {% if form.options %}<div class="question_options">{{ form.options|safe }}</div>{% endif %}
+    <div class="qcm_choix">
+           {{ form.answers }}
+	</div>
+</div>
+
+        {% endfor %}
+    <div align=center> 
+    <input type="submit" value="Correction">
+    </div>
+
+<!-- google_ad_section_end -->
+
+</form>
+
+{% endblock %}

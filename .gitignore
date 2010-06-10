@@ -1,0 +1,4 @@
+.svn
+*.pyc
+*.sqlite3
+.DS_Store

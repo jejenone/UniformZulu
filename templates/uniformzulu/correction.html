@@ -1,0 +1,37 @@
+{% extends "uniformzulu/base_qcm.html" %}
+
+{% block title %}Correction QCM examen PPL - Module {{quiz.module}} {% endblock %}
+
+{% block qcm %}
+
+Test effectue le {{quiz.submitted|date:"l d M Y" }} a {{quiz.submitted|date:"H:i:s"}}
+<br>
+Resultat: {{ quiz.get_score_str_absolute }} soit {{ quiz.get_score_str_pct }}
+
+<!-- google_ad_section_start -->
+
+<form action="." method="post">
+
+    {{ formset.management_form }}
+
+        {% for form in formset.forms %}
+
+<div class="rounded_question">
+	<div class="question_header">
+        <div class="question_num"><p>{{forloop.counter}}</p></div>
+        <div class="question_texte"><p>{{ form.problem|safe }}</p></div>
+    </div>
+    {% if form.options %}<div class="question_options">{{ form.options|safe }}</div>{% endif %}
+	{% if not form.is_correct %}<div>La bonne reponse est {{form.correct|add:"1"}}</div>{% endif %}
+    <div class={% if form.is_correct %}"reponse_bonne"{%else%}"reponse_fausse"{%endif%}>
+        {{ form.answers }}
+	</div>
+</div>
+
+    {% endfor %}
+
+</form>
+
+<!-- google_ad_section_end -->
+
+{% endblock %}

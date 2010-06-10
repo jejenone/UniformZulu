@@ -1,0 +1,43 @@
+{% extends "uniformzulu/qcm_ppl.html" %}
+
+{% block title %}QCM examen PPL - Module {{quiz.module}} {% endblock %}
+
+{% block qcm %}
+
+
+<form action="" method="post">
+
+<!-- google_ad_section_start -->
+
+        {% for qq in qqset %}
+
+
+<div  align=center class={% if qq.is_good %}"rounded_reponse_bonne"{%else%}"rounded_reponse_fausse"{%endif%}>
+
+<table width='80%' align=center border='0' cellspacing='0' cellpadding='5'>
+        <tr><td width=3% class="rounded_question_num">{{forloop.counter}} (id {{qq.question.id}})</td><td class=rounded_question_texte>{{ qq.question }}</td></tr>
+        <tr><td>repondu {{qq.question.get_answered_count}} fois</td><td>le {{qq.quizz.submitted}}</td></tr>
+        
+        
+        {% if toto %}
+        {% if form.options %}<tr><td colspan=2 class=rounded_question_options>{{ form.options|safe }}</td></tr>{% endif %}
+        <tr><td colspan=2 class=qcm_choix2>
+            {{ form.answers }}
+		</td></tr>
+		{% endif %}
+		
+</table>
+
+</div>
+
+
+        {% endfor %}
+    <div align=center> 
+    <input type="submit" value="Correction">
+    </div>
+
+<!-- google_ad_section_end -->
+
+</form>
+
+{% endblock %}

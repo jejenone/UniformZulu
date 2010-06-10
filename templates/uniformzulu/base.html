@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+    
+<html>
+
+
+<head>
+
+<title>{% block title %}MonPPL - Examen th&eacute;orique PPL{% endblock %}</title>
+
+<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}shadowbox/shadowbox.css">
+<link href="{{MEDIA_URL}}uniformzulu.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}shadowbox/shadowbox.js"></script>
+<script type="text/javascript">
+Shadowbox.init({
+ handleOversize: "drag"
+});
+</script>
+
+<meta name="google-site-verification" content="D-siGwPLLEBVnwHRVuRvL2B8NqL8qzk6OA7ADqCbqVw" />
+
+</head>
+
+<body>
+
+<div id=container>
+
+	<div id='main_header'>
+	
+	<div class="innertube">
+	
+	<table width='100%' border=0 align=center cellpadding=10 cellspacing=0>
+		<tr>
+		<td align=left valign=top>
+		<a href='{% url uniformzulu.views.main %}'><img src='{{MEDIA_URL}}pic_cessna172.jpg' width="200" border=0></a>
+		</td>
+		<td width="100%" align=left>
+		<h2>MonPPL - Th&eacute;orique PPL (ALPHA)</h2>
+		</td>
+		<td align=right valign=top><nobr>{% if user.is_authenticated %}Bienvenue, {{ user.first_name }}!<br><a href='{% url django.contrib.auth.views.logout %}?next={% url uniformzulu.views.main %}'>(d&eacute;connexion)</a>
+		
+		{% else %}
+		
+		<form method="POST" action="{% url django.contrib.auth.views.login %}">
+		{{login_form.username}}{{login_form.password}}<input type=submit value="Ok">
+		<input type=hidden name=next value="{{next}}">
+		</form>
+		 ou <a href='{% url registration_register %}'>Cr&eacute;ez un compte</a>
+		 <br><a href='{% url django.contrib.auth.views.password_reset %}'>Mot de passe oubli&eacute; ?</a>
+		<br>
+		
+		{% endif %}
+		
+		</nobr></td>
+		
+		</tr>
+	</table>
+	
+	</div>
+	
+	</div>
+
+
+<div id="contentwrapper">
+
+{% block content %}
+
+
+{% endblock %}
+
+</div>
+
+<div id="ads">
+
+<div class="innertube">
+{% block ads %}
+
+{% endblock %}
+</div>
+
+</div>
+
+<div id="footer">
+
+<div class="innertube">
+
+<table align=left border=0 width="100%">
+<tr>
+<td class='baseline'>2009</td><td class='baseline'>Monppl.com ALPHA</td><td class='baseline'><a href="mailto:webmaster@monppl.com"  class='baseline'>Contact</a></td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8860006-2");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</div>
+
+</body>
+
+</html>

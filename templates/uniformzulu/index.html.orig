@@ -1,0 +1,98 @@
+{% extends "uniformzulu/base_index.html" %}
+
+{% load humanize %}
+
+{% block title %}MonPPL - Examen th&eacute;orique PPL{% endblock %}
+
+{% block qcm %}
+
+
+<div class="rounded_index">
+<table cellpadding=5>
+<tr><td class="rounded_index_header">Choisir un module:</td></tr>
+{% for module in modules %}
+<tr>
+<td>
+{% if user.is_authenticated %}<a href="{% url uniformzulu.views.get_quiz module.id %}">{% endif %}{{module}}{% if user.is_authenticated %}</a>{% endif %} ({{ module.std_num }} questions) {% if not user.is_authenticated %}(login required){% endif %}
+</td>
+</tr>
+{% endfor %}
+
+</table>
+</div>
+
+
+{% if user.is_authenticated %}
+
+<div class="rounded_index">
+<table cellpadding=5><tr>
+<td class="rounded_index_header">
+Mes statistiques:
+</td></tr>
+<tr>
+<td>
+{% if quizzes %}
+{{quizzes|length}} QCM effectu&eacute;s:
+{% else %}
+Vous n'avez r&eacute;pondu &agrave; aucun QCM
+{% endif %}
+
+<br>
+
+{% ifnotequal quizzes|length 0 %}
+
+{% load charts %}
+
+{% chart %}
+  {% chart-data module_pie_data %}
+  {% chart-size "450x180" %}
+  {% chart-type "pie" %}
+  {% chart-labels module_pie_labels %}
+  {% chart-background "E5E5E5" %}
+  {% chart-colors "0000FF" %}
+{% endchart %}
+
+<br>
+Mes 10 derniers QCM par module:
+<br>
+{% for module,quizzes,stats in module_stats %}
+<table width="95%">
+<tr><td>{{module}}</td></tr>
+<tr><td>
+<table>
+{% for quizz in quizzes %}
+<tr><td>
+<a href='{% url uniformzulu.views.quiz_form quizz.uuid %}'><nobr>{{quizz.submitted|date:"l d M Y" }} &agrave; {{quizz.submitted|date:"H:i:s"}}</nobr></a></td><td>{{quizz.get_score_str_pct}}</td>
+</tr>
+{% endfor %}
+</table>
+</td>
+<td class="flat_stats">
+{% chart %}
+	{% chart-data stats %}
+    {% chart-size "300x180" %}
+	{% chart-type "column" %}
+	{% chart-data-scale 0,100 %}
+	{% chart-background "E5E5E5" %}
+	{% chart-colors "0000FF" %}
+    {% chart-bar-width 20 0 4 %}
+	{% chart-range-marker "r" "000000" "0.748" "0.752" %}
+	{% axis "left" %}
+		{% axis-range 0 100 %}
+		{% axis-label-positions 0 100 }
+	{% endaxis %}
+{% endchart %}
+</td></tr>
+</table>
+{% endfor %}
+
+{% endifnotequal %}
+
+</td>
+</tr></table>
+</div>
+
+{% endif %}
+
+
+{% endblock %}

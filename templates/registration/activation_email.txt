@@ -1,0 +1,9 @@
+Bienvenue sur MonPPL!
+
+Vous recevez ce mail car vous avez fait une demande de cr&eacute;ation de compte sur MonPPL.com.
+
+cliquez sur le lien ci-dessous pour confirmer la cr&eacute;ation du compte:
+
+http://www.{{site}}{% url registration.backends.default.urls.activate activation_key %}
+
+Vous avez {{expiration_days}} jours pour activer votre compte, apr&egrave;s quoi celui-ci sera supprim&eacute; automatiquement.

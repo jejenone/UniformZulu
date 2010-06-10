@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+    
+<html>
+
+
+<head>
+
+<title>{% block title %}Air et Compagnie - Pr&eacute;paration Examen th&eacute;orique PPL{% endblock %}</title>
+
+<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}shadowbox/shadowbox.css">
+<link href="{{MEDIA_URL}}uniformzulu.css" rel="stylesheet" type="text/css">
+
+<link href="{{MEDIA_URL}}custom_aec.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="{{MEDIA_URL}}js/jquery.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}shadowbox/shadowbox.js"></script>
+<script type="text/javascript">
+Shadowbox.init({
+ handleOversize: "drag"
+});
+</script>
+
+<meta name="google-site-verification" content="D-siGwPLLEBVnwHRVuRvL2B8NqL8qzk6OA7ADqCbqVw" />
+
+</head>
+
+<body>
+
+<div id="aec_header">Ecole de pilotage avion et h&eacute;licopt&egrave;re</div>
+
+<div id=container>
+
+	<div id='main_header'>
+	
+	<div class="innertube">
+	
+	<table width='100%' border=0 align=center cellpadding=10 cellspacing=0>
+		<tr>
+		<td align=left valign=top>
+		<a href='{% url uniformzulu.views.main %}'><img src='{{MEDIA_URL}}air-et-compagnie-logo.png' width="300" border=0></a>
+		</td>
+		<td width="100%" align=left>
+		<h2>Th&eacute;orique PPL</h2>
+		</td>
+		<td align=right valign=top><nobr>{% if user.is_authenticated %}Bienvenue, {{ user.first_name }}!<br><a href='{% url django.contrib.auth.views.logout %}?next={% url uniformzulu.views.main %}'>(d&eacute;connexion)</a>
+		
+		{% else %}
+		
+		<form method="POST" action="{% url django.contrib.auth.views.login %}">
+		{{login_form.username}}{{login_form.password}}<input type=submit value="Ok">
+		<input type=hidden name=next value="{{next}}">
+		</form>
+		 ou <a href='{% url registration_register %}'>Cr&eacute;ez un compte</a>
+		 <br><a href='{% url django.contrib.auth.views.password_reset %}'>Mot de passe oubli&eacute; ?</a>
+		<br>
+		
+		{% endif %}
+		
+		</nobr></td>
+		
+		</tr>
+	</table>
+	
+	</div>
+	
+	</div>
+
+
+<div id="contentwrapper">
+
+{% block content %}
+
+
+{% endblock %}
+
+</div>
+
+<div id="footer">
+
+<div class="innertube">
+
+<table align=left border=0 width="100%">
+<tr>
+<td class='baseline'>2009</td><td class='baseline'>Hosted by Monppl.com</td><td class='baseline'><a href="mailto:webmaster@monppl.com"  class='baseline'>Contact</a></td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8860006-2");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</div>
+
+</body>
+
+</html>
